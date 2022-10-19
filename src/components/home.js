@@ -50,13 +50,16 @@ function Home() {
               <FaTrash />
             </button>
             {doc.data().item}
-            <button onClick={doc.data().taken ? () => updatetaken(doc.id, false) : () => updatetaken(doc.id, true)}>{doc.data().taken ? <CgClose /> : <FaCheck />}</button>
+            <button onClick={doc.data().taken ? () => updatetaken(doc.id, false) : () => updatetaken(doc.id, true) }>{doc.data().taken ? <CgClose /> : <FaCheck />}</button>
           </li>
         ))}
       </ul>
       <Footer/>
+      
     </div>
   );
 }
+
+
 
 export default Home;
