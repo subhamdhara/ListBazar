@@ -1,0 +1,29 @@
+.TabView {
+    width: 100%;
+  }
+  
+  .TabView .title {
+    font-weight: bold;
+    padding: 0.5em;
+  }
+  
+  /* .TabView .body {
+    background-color: #58a5f0;
+    color: ; 
+  } */
+  
+  .TabView .tabs {
+    display: flex;
+    /* margin-bottom: 10px; */
+  }
+  
+  .TabView .tabs .tab {
+    padding: 5px 1em;
+  }
+  
+  .TabView .tabs .active-tab {
+    padding: 5px 1em;
+    background-color: #adadad;
+    /* color:#fff; */
+  }
+  

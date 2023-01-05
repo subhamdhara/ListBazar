@@ -8,7 +8,8 @@
     font-family: sans-serif;
     text-align: center;
     font-size: 2rem;
-  
+
+    /* background-color: #0277bd; */
   }
   
   
@@ -25,9 +26,9 @@
   ul{
     display: flex;
     flex-direction: column;
-    background-color: #ef5350;
+    overflow: hidden;
   }
-  ul li{
+  ul li div{
     display: flex;
     flex-direction: row;
     padding: 10px;
@@ -46,13 +47,14 @@
     opacity: 0.62;
   }
   
-  ul li.taken{
+  ul li div.taken{
     background-color: #66bb6a;  
   }
-  ul li.not-taken{
+  ul li div.not-taken{
     background-color: #ef5350;
   }
   
   footer{
     margin: 20px 0;
   }
+  
