@@ -14,8 +14,13 @@
   
   .TabView .tabs {
     display: flex;
+    overflow-x: scroll;
     /* margin-bottom: 10px; */
   }
+  .TabView .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
   
   .TabView .tabs .tab {
     padding: 5px 1em;
@@ -23,7 +28,7 @@
   
   .TabView .tabs .active-tab {
     padding: 5px 1em;
-    background-color: #adadad;
+    border-bottom: #0277bd solid 4px;
     /* color:#fff; */
   }
   
