@@ -18,6 +18,7 @@ import React, {
 function Footer() {
   const [itemName, setItemName] = useState([]);
   const [cate, setCate] = useState([]);
+  const [category, setCategory] = useState('medicine');
   let cid = 0;
   // items.map(({id, item, taken}) => {
     //   console.log(taken)
@@ -32,16 +33,18 @@ function Footer() {
         // snapshot.docs.map((doc) => console.log(doc.id))
       });
     }, []);
-    // console.log(cate[0]["category"])
+    //console.log("First category: "+cate[0]["category"])
     
     async function addItem(e) {
     e.preventDefault();
     moref.current.close();
 
-    cate.forEach((a) => {
-      if (a.category === category) {
-        cid = a.id;
+    let selCal = category;
+    console.log('Selected: '+selCal);
 
+    cate.forEach((a) => {
+      if (a.category === selCal) {
+        cid = a.id;
       }
     });
     // document.getElementById('w').innerHTML=<Modal></Modal>
@@ -57,9 +60,10 @@ function Footer() {
     });
     // console.log(category)
     setItemName("");
+    setCategory(cate[0]["category"]);
   }
   // console.log(cate)
-  const [category, setCategory] = useState('medicine');
+  
   return (
     
     <footer className="Footer">
@@ -81,8 +85,12 @@ function Footer() {
         <form onSubmit={addItem} className="category">
         <select
         id="cars"
-        onChange={(e) => setCategory(e.target.value.toLowerCase())}
-      >
+        onChange={(e) => {
+          let val = e.target.value.toLowerCase();
+          setCategory(val);
+          console.log(val);
+        }}
+       >
         {cate.map((categoryn) => 
           <option value={categoryn.category}>{categoryn.category}</option>
         )}
